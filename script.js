@@ -11,3 +11,9 @@ navToggleBtnEl.addEventListener("click", function(){
         navDropMenuEl.style.height = `0px`
     }
 })
+window.addEventListener("resize", function(e){
+    const setHeight = document.querySelector(".links").clientHeight;
+    if(this.window.innerWidth <= 1280 && navDropMenuEl.clientHeight !== 0){
+        navDropMenuEl.style.height = `${setHeight}px`
+    }
+})
