@@ -2,7 +2,8 @@
 
 :root{
     --clr-body-background: hsla(29, 86%, 36%, 0.178);
-    --clr-navbar: hsla(0, 0%, 97%, 0.116);
+    --clr-navbar: hsla(31, 81%, 54%, 0.904);
+    --clr-navbar-shadow: hsla(0, 0%, 3%, 0.205);
 
     --clr-white: white;
     --clr-gray-light: rgb(223, 223, 223);
@@ -12,6 +13,7 @@
     --clr-black02: hsla(0, 0%, 0%, 0.2);
     --clr-orange-cadmium10: #F48923;
     --clr-orange-carrot10: #E98C29;
+    --clr-orange-carrot03: hsla(31, 81%, 54%, 0.301);
     --clr-gold-satin-sheen10: #C59538;
     --clr-metalic-sunburst10: #937B43;
     --clr-gray-ebony10: #6F7058;
@@ -25,7 +27,7 @@
     --transition02: all 0.2s linear;
     --transition01: all 0.1s linear;
 
-    --box-shadow-bottom-black05: 0 5px 20px 0 var(--clr-black02);
+    --box-shadow-navbar: 0 5px 15px 0px var(--clr-navbar-shadow);
 }
 
 *,
@@ -108,8 +110,8 @@ nav{
 
     /* coloring */
     background: var(--clr-navbar);
-    box-shadow: var(--box-shadow-bottom-black05);
-    backdrop-filter: blur(40px);
+    box-shadow: var(--box-shadow-navbar);
+    backdrop-filter: blur(10px);
 }
 .navbar{
     width: 90%;
@@ -191,7 +193,7 @@ nav{
     
         /* coloring */
         background: var(--clr-navbar);
-        box-shadow: var(--box-shadow-bottom-black05);
+        box-shadow: var(--box-shadow-navbar);
         backdrop-filter: blur(40px);
     }
     .navbar-dropmenu{
@@ -240,6 +242,17 @@ nav{
     /* coloring */
     color: var(--clr-white);
 }
+@keyframes upup {
+    0%{
+        transform: translateY(0em) ;
+    }
+    50%{
+        transform: translateY(1em) ;
+    }
+    100%{
+        transform: translateY(0em) ;
+    }
+}
 .up-btn{
     position: fixed;
     bottom: 8vh;
@@ -251,6 +264,7 @@ nav{
     width: 0;
     overflow: hidden;
     transition: var(--transition02);
+    animation: upup 1.5s infinite linear;
 }
 .up-btn-show{
     width: auto;
