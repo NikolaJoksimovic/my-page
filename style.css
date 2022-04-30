@@ -2,7 +2,7 @@
 
 :root{
     --clr-body-background: hsla(29, 86%, 36%, 0.178);
-    --clr-navbar: hsla(31, 81%, 54%, 0.904);
+    --clr-navbar: hsla(31, 81%, 54%, 0.911);
     --clr-navbar-shadow: hsla(0, 0%, 3%, 0.205);
 
     --clr-white: white;
@@ -50,12 +50,16 @@ button{
     background-color: transparent;
     transition: var(--transition01);
 }
+a{
+    text-decoration: none;
+}
+button,
+a{
+    -webkit-tap-highlight-color: transparent;
+}
 li{
     list-style-type: none;
     padding: 1em 0 1em 0;
-}
-a{
-    text-decoration: none;
 }
 p{
     letter-spacing: 0.15em;
