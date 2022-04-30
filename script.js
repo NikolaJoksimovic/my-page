@@ -35,12 +35,20 @@ window.addEventListener("resize", function(){
     }
 })
 
-linksEl.forEach(function(item){
-    item.addEventListener("click", function(){
+linksEl.forEach(function(link){
+    link.addEventListener("click", function(e){
+
+        e.preventDefault();
+        const id = e.currentTarget.getAttribute("href").slice(1);
+        const element = document.getElementById(id);
+        const elementPosition = element.offsetTop;
+        console.log(elementPosition);
+        document.documentElement.scrollTop = elementPosition;
+
         navDropMenuEl.style.transition = "all 0.0s";
         isDropMenuDown = false;
         renderDropMenu();
-    })
+    });
 })
 
 function renderDropMenu(){
