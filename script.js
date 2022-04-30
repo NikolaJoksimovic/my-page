@@ -23,14 +23,13 @@ navToggleBtnEl.addEventListener("click", function(){
 
 linksEl.forEach(function(item){
     item.addEventListener("click", function(e){
-        // console.log("click");
+        navDropMenuEl.style.transition = "all 0.0s";
         isDropMenuDown = false;
         renderDropMenu();
     })
 })
 
 function renderDropMenu(){
-    
     const setHeight = document.querySelector(".links").clientHeight;
     if(isDropMenuDown){
         navDropMenuEl.style.height = `${setHeight}px`
