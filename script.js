@@ -5,12 +5,15 @@ const navToggleBtnEl = document.querySelector(".navbar-toggle-btn"),
     navEl = document.querySelector("nav"),
     upBtnEl = document.querySelector(".up-btn"),
     navbarEl = document.querySelector(".navbar");
-
-// NAVBAR DROP MENU
+    
+    
+    // NAVBAR DROP MENU
 let isDropMenuDown = false;
 
+// set scrollRestoration manual when done..
+
 window.addEventListener("beforeunload", function(){
-    history.scrollRestoration = "manual";
+    history.scrollRestoration = "auto";
     window.scrollTo(0,0);
 })
 
@@ -74,4 +77,22 @@ function renderDropMenu(){
     }else{
         navDropMenuEl.style.height = `0px`
     }
+}
+
+
+let obj = "a";
+async function readProjectList(){
+    fetch("./project-list.json")
+    .then(res => res.json())
+    .then(data => obj2 = data)
+    .then(function(){
+        console.log(obj2);
+        obj = obj2;
+    })
+}
+readProjectList();
+renderProjects();
+
+function renderProjects(){
+    console.log(obj);
 }
