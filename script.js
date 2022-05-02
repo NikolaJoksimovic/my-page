@@ -3,7 +3,8 @@ const navToggleBtnEl = document.querySelector(".navbar-toggle-btn"),
     navDropMenuContainerEl = document.querySelector(".navbar-container"),
     linksEl = document.querySelectorAll(".link"),
     navEl = document.querySelector("nav"),
-    upBtnEl = document.querySelector(".up-btn");
+    upBtnEl = document.querySelector(".up-btn"),
+    navbarEl = document.querySelector(".navbar");
 
 // NAVBAR DROP MENU
 let isDropMenuDown = false;
@@ -41,11 +42,12 @@ linksEl.forEach(function(link){
         e.preventDefault();
         const id = e.currentTarget.getAttribute("href").slice(1);
         const element = document.getElementById(id);
-        const elementPosition = element.offsetTop;
-        console.log(elementPosition);
+        let elementPosition = element.offsetTop;
+        const navbarHeight = navbarEl.clientHeight;
+        elementPosition === 0? elementPosition = 0 : elementPosition = elementPosition - navbarHeight; 
         document.documentElement.scrollTop = elementPosition;
-
-        navDropMenuEl.style.transition = "all 0.0s";
+        
+        navDropMenuEl.style.transition = "all 0.1s";
         isDropMenuDown = false;
         renderDropMenu();
     });

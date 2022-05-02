@@ -50,6 +50,11 @@ button{
     background-color: transparent;
     transition: var(--transition01);
 }
+h1{
+    color: var(--clr-white);
+    text-transform: uppercase;
+    font-size: 1.8em;
+}
 a{
     text-decoration: none;
 }
