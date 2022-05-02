@@ -9,6 +9,11 @@ const navToggleBtnEl = document.querySelector(".navbar-toggle-btn"),
 // NAVBAR DROP MENU
 let isDropMenuDown = false;
 
+window.addEventListener("beforeunload", function(){
+    history.scrollRestoration = "manual";
+    window.scrollTo(0,0);
+})
+
 window.addEventListener("scroll", function(){
     const scrollHeight = this.window.scrollY;
     const navHeight = navEl.clientHeight;
@@ -52,18 +57,6 @@ linksEl.forEach(function(link){
         renderDropMenu();
     });
 })
-
-function renderDropMenu(){
-    const setHeight = document.querySelector(".links").clientHeight;
-    if(isDropMenuDown){
-        navDropMenuEl.style.height = `${setHeight}px`
-    }else{
-        navDropMenuEl.style.height = `0px`
-    }
-}
-
-// FUNCIONAL BUTTONS
-
 navToggleBtnEl.addEventListener("click", function(){
     navDropMenuEl.style.transition = "all 0.1s linear"
     isDropMenuDown = !isDropMenuDown;
@@ -73,3 +66,12 @@ navToggleBtnEl.addEventListener("click", function(){
 upBtnEl.addEventListener("click", function(){
     document.documentElement.scrollTop = 0;
 })
+
+function renderDropMenu(){
+    const setHeight = document.querySelector(".links").clientHeight;
+    if(isDropMenuDown){
+        navDropMenuEl.style.height = `${setHeight}px`
+    }else{
+        navDropMenuEl.style.height = `0px`
+    }
+}
