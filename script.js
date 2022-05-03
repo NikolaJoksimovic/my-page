@@ -36,6 +36,10 @@ window.addEventListener("scroll", function(){
     }else{
         upBtnEl.classList.remove("up-btn-show");
     }
+    if(isDropMenuDown){
+        isDropMenuDown = false;
+        renderDropMenu();
+    }
 })
 
 window.addEventListener("resize", function(){
