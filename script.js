@@ -108,7 +108,7 @@ async function renderProjectList(){
                     ${data[i].name}
                 </h2>
                 <a href="${data[i].url}" class="item-link" target="_blank">
-                    click to check it out!
+                    check it out!
                 </a>
                 <a href="${data[i].github}" class="item-link" target="_blank">
                     &ltcode&gt
