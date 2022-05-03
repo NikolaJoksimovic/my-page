@@ -3,24 +3,36 @@
         "id" : 1,
         "name" : "chrome alert extention",
         "language" : "HTML, CSS",
-        "img" : "id",
-        "url" : "https://nikolajoksimovic.github.io/my-page/",
-        "github" : "https://github.com/"
+        "img" : "./images/project-chrome-extention.png",
+        "altImg" : "",
+        "url" : "https://nikolajoksimovic.github.io/chrome-alert-extension/",
+        "github" : "https://github.com/NikolaJoksimovic/chrome-alert-extension"
     },
     {
-        "id" : 1,
-        "name" : "chrome alert extention",
+        "id" : 2,
+        "name" : "youtube page",
         "language" : "HTML, CSS",
-        "img" : "id",
-        "url" : "https://nikolajoksimovic.github.io/my-page/",
-        "github" : "https://github.com/"
+        "img" : "./images/project-youtube-page.png",
+        "altImg" : "",
+        "url" : "https://nikolajoksimovic.github.io/youtube-page/",
+        "github" : "https://github.com/NikolaJoksimovic/youtube-page"
     },
     {
-        "id" : 1,
-        "name" : "chrome alert extention",
-        "language" : "HTML, CSS",
-        "img" : "id",
-        "url" : "https://nikolajoksimovic.github.io/my-page/",
-        "github" : "https://github.com/"
+        "id" : 3,
+        "name" : "personnel reviews",
+        "language" : "HTML, CSS, JavaScript",
+        "img" : "./images/project-personnel-reviews.png",
+        "altImg" : "",    
+        "url" : "https://nikolajoksimovic.github.io/reviews/",
+        "github" : "https://github.com/NikolaJoksimovic/reviews"
+    },
+    {
+        "id" : 4,
+        "name" : "welcome page",
+        "language" : "HTML, CSS, JavaScript",
+        "img" : "./images/project-welcome-page.png",
+        "altImg" : "",    
+        "url" : "https://nikolajoksimovic.github.io/Welcome-page/",
+        "github" : "https://github.com/NikolaJoksimovic/Welcome-page"
     }
 ]

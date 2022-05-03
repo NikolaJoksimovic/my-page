@@ -4,16 +4,20 @@ const navToggleBtnEl = document.querySelector(".navbar-toggle-btn"),
     linksEl = document.querySelectorAll(".link"),
     navEl = document.querySelector("nav"),
     upBtnEl = document.querySelector(".up-btn"),
-    navbarEl = document.querySelector(".navbar");
+    navbarEl = document.querySelector(".navbar"),
+    projectsContainerEl = document.querySelector(".projects-container");
     
     
     // NAVBAR DROP MENU
 let isDropMenuDown = false;
 
-// set scrollRestoration manual when done..
 
+renderProjectList();
+
+
+// set scrollRestoration manual when done..
 window.addEventListener("beforeunload", function(){
-    history.scrollRestoration = "auto";
+    history.scrollRestoration = "manual";
     window.scrollTo(0,0);
 })
 
@@ -79,20 +83,37 @@ function renderDropMenu(){
     }
 }
 
-
-let obj = "a";
-async function readProjectList(){
-    fetch("./project-list.json")
-    .then(res => res.json())
-    .then(data => obj2 = data)
-    .then(function(){
-        console.log(obj2);
-        obj = obj2;
-    })
+async function getData(link, callback){
+    fetch(link)
+    .then(response => response.json())
+    .then(jsonFormData => callback(jsonFormData));
 }
-readProjectList();
-renderProjects();
 
-function renderProjects(){
-    console.log(obj);
+async function renderProjectList(){
+    
+    getData("./project-list.json", (data) => {
+        for(let i=0; i<data.length; i++){
+            console.log(data[i].img);
+            projectsContainerEl.innerHTML += `
+                <article class="project-item center-column">
+                <div class = "item-img-container">
+                <img src="${data[i].img}" alt="${data[i].altImg}">
+                <div class="img-wrap"><div class="wrap"></div></div>
+                </div>
+                    <h2 class="item-title">
+                    ${data[i].name}
+                </h2>
+                <a href="${data[i].url}" class="item-link" target="_blank">
+                    click to check it out!
+                </a>
+                <a href="${data[i].github}" class="item-link" target="_blank">
+                    &ltcode&gt
+                </a>
+            </article>
+                                            `
+        }
+    });
+    
 }
+
+
