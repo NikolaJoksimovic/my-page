@@ -9,7 +9,8 @@ const navToggleBtnEl = document.querySelector(".navbar-toggle-btn"),
     contactLinksContainerEl = document.querySelector(".contact-links-container"),
     contactLinksLeftEl = document.querySelector(".contact-left"),
     contacLinksEl = document.querySelector(".contact-links"),
-    submitBtn = document.querySelector(".submit-btn");
+    submitBtn = document.querySelector(".submit-btn"),
+    submitFormEl = document.querySelector(".form-text");
     
     
     // NAVBAR DROP MENU
@@ -148,5 +149,6 @@ contactLinksLeftEl.addEventListener("click", ()=>{
 });
 submitBtn.addEventListener("click", (e)=>{
     e.preventDefault();
+    submitFormEl.submit();
 })
 
