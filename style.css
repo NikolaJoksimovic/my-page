@@ -91,6 +91,12 @@ img{
     align-items: center;
     flex-direction: column;
 }
+.center-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
 .section{
     position: relative;
     top: 0;
@@ -192,7 +198,6 @@ nav{
     width: 100%;
     height: 0;
     overflow: hidden;
-    transition: var(--transition01);
 }
 .links{
     padding-top: 2em;
@@ -414,36 +419,6 @@ nav{
 #contact{
     background-color: var(--clr-blue-pacific10);
 }
-.contact-container{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.contact-links{
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 0;
-    width: 20px;
-    /* width: 0; */
-    overflow: hidden;
-    background-color: var(--clr-navbar);
-}
-.contact-links-show{
-    width: 50px;
-}
-.contact-links a{
-    padding: calc(5px + 0.2vw);
-    font-size: calc(1.3em + 1.5vw);
-}
-#email,
-#linkedin,
-#github{
-    color: var(--clr-white);
-}
-
 input[type="text"],
 input[type="email"]{
     padding: 0.5em;
@@ -475,4 +450,46 @@ input[type="submit"]{
     background-color: var(--clr-blue-metalic10);
     border: 0.2em solid var(--clr-blue-deepspace10);
     color: var(--clr-white);
+}
+.contact-links-container{
+    background-color: var(--clr-orange-cadmium10);
+    width: 0;
+    overflow: hidden;
+    height: 8em;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    box-shadow: var(--box-shadow-navbar);
+}
+.contact-left{
+    cursor: pointer;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    padding: 0 0.4em 0 0.4em;
+    color: var(--clr-white);
+}
+.contact-links{
+    height: 100%;
+    width: 0;
+    overflow: hidden;
+    font-size: 1.4em;
+    transition: var(--transition02);
+}
+
+.contact-links-expand{
+    width: 2em;
+    padding: 0.2em;
+    margin: 0.4em 0.4em 0.4em 0 ;
+}
+#linkedin,
+#email,
+#github{
+    color: var(--clr-white);
+    margin: 0.2em 0 0.2em 0;
 }

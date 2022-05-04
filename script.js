@@ -5,7 +5,10 @@ const navToggleBtnEl = document.querySelector(".navbar-toggle-btn"),
     navEl = document.querySelector("nav"),
     upBtnEl = document.querySelector(".up-btn"),
     navbarEl = document.querySelector(".navbar"),
-    projectsContainerEl = document.querySelector(".projects-container");
+    projectsContainerEl = document.querySelector(".projects-container"),
+    contactLinksContainerEl = document.querySelector(".contact-links-container"),
+    contactLinksLeftEl = document.querySelector(".contact-left"),
+    contacLinksEl = document.querySelector(".contact-links");
     
     
     // NAVBAR DROP MENU
@@ -40,6 +43,13 @@ window.addEventListener("scroll", function(){
         isDropMenuDown = false;
         renderDropMenu();
     }
+    const contactSectionHeight = this.document.getElementById("contact").offsetTop;
+    // console.log((scrollHeight+ Math.floor(this.window.innerHeight/3)) + " / " + contactSectionHeight);
+    if((scrollHeight+ Math.floor(this.window.innerHeight/2.9)) >= contactSectionHeight){
+        contactLinksContainerEl.style.width = "auto";
+    }else{
+        contactLinksContainerEl.style.width = "0px";
+    }
 })
 
 window.addEventListener("resize", function(){
@@ -63,13 +73,13 @@ linksEl.forEach(function(link){
         elementPosition === 0? elementPosition = 0 : elementPosition = elementPosition - navbarHeight; 
         document.documentElement.scrollTop = elementPosition;
         
-        navDropMenuEl.style.transition = "all 0.1s";
+        navDropMenuEl.style.transition = "all 0.2s";
         isDropMenuDown = false;
         renderDropMenu();
     });
 })
 navToggleBtnEl.addEventListener("click", function(){
-    navDropMenuEl.style.transition = "all 0.1s linear"
+    navDropMenuEl.style.transition = "all 0.2s linear"
     isDropMenuDown = !isDropMenuDown;
     renderDropMenu();
 })
@@ -119,5 +129,21 @@ async function renderProjectList(){
     });
     
 }
+
+let contactLinksOpen = false;
+contactLinksLeftEl.addEventListener("click", ()=>{
+    
+    if(!contactLinksOpen){
+        contactLinksOpen = true;
+        contactLinksLeftEl.innerHTML = `<i class="fa-solid fa-angle-right"></i>`
+
+        contacLinksEl.classList.add("contact-links-expand")
+    }else{
+        contactLinksOpen = false;
+        contactLinksLeftEl.innerHTML = `<i class="fa-solid fa-angle-left"></i>`
+        contacLinksEl.classList.remove("contact-links-expand")
+        
+    }
+});
 
 
