@@ -40,6 +40,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+::placeholder{
+    color: var(--clr-white05);
+}
+
 html{
     scroll-behavior: smooth;
 }
@@ -419,30 +423,42 @@ nav{
 #contact{
     background-color: var(--clr-blue-pacific10);
 }
+.contact-message{
+    width: 80%;
+    max-width: 500px;
+}
 input[type="text"],
 input[type="email"]{
     padding: 0.5em;
     margin-bottom: 1em;
-    
-    min-width: 250px;
+    width: 90%;
     font-weight: 500;
     background-color: transparent;
     border: none;
     border-bottom: 0.2em solid var(--clr-blue-deepspace10);
-}
-::placeholder{
     color: var(--clr-white);
+    font-weight: 700;
+    letter-spacing: 0.15em;
 }
 textarea{
     padding: 0.5em;
     margin-bottom: 1em;
-    min-width: 250px;
-    max-width: 70vw;
+    min-width: 90%;
+    max-width: 90%;
     min-height: 10em;
     color: black;
     font-weight: 700;
     border: 0.2em solid var(--clr-blue-deepspace10);
     background-color: var(--clr-blue-metalic10);
+    color: var(--clr-white);
+    letter-spacing: 1.5px;
+}
+input:focus{
+    outline: none;
+    /* background-color: transparent; */
+}
+textarea:focus{
+    outline: none;
 }
 input[type="submit"]{
     width: 120px;
@@ -450,6 +466,23 @@ input[type="submit"]{
     background-color: var(--clr-blue-metalic10);
     border: 0.2em solid var(--clr-blue-deepspace10);
     color: var(--clr-white);
+    letter-spacing: 0.15em;
+    font-weight: 700;
+}
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 50px var(--clr-blue-pacific10) inset;
+    -webkit-text-fill-color: var(--clr-white);
+}
+
+input:-webkit-autofill:focus {
+    -webkit-box-shadow: 0 0 0 50px var(--clr-blue-pacific10) inset;
+    -webkit-text-fill-color: var(--clr-white);
+}
+@media only screen and(max-width: 600px) {
+    input,
+    textarea{
+        letter-spacing: 0.05em;
+    }
 }
 .contact-links-container{
     background-color: var(--clr-orange-cadmium10);
