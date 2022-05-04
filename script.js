@@ -13,9 +13,8 @@ const navToggleBtnEl = document.querySelector(".navbar-toggle-btn"),
     submitFormEl = document.querySelector(".form-text");
     
     
-    // NAVBAR DROP MENU
 let isDropMenuDown = false;
-
+let upBtnAvailability = true;
 
 renderProjectList();
 
@@ -36,7 +35,7 @@ window.addEventListener("scroll", function(){
         navEl.classList.remove("nav-fixed");
         navDropMenuContainerEl.classList.remove("navbar-container-fixed");
     }
-    if(scrollHeight > (this.window.innerHeight)/2){
+    if((scrollHeight > (this.window.innerHeight)/2 && upBtnAvailability)){
         upBtnEl.classList.add("up-btn-show");
     }else{
         upBtnEl.classList.remove("up-btn-show");
@@ -147,8 +146,12 @@ contactLinksLeftEl.addEventListener("click", ()=>{
         contacLinksEl.classList.remove("contact-links-expand");
     }
 });
-submitBtn.addEventListener("click", (e)=>{
-    e.preventDefault();
-    submitFormEl.submit();
-})
+submitFormEl.addEventListener("focusin", ()=>{
+    upBtnAvailability = false;
+    upBtnEl.classList.remove("up-btn-show");
+});
+submitFormEl.addEventListener("focusout", ()=>{
+    upBtnAvailability = true;
+    upBtnEl.classList.add("up-btn-show");
+});
 

@@ -489,7 +489,7 @@ input:-webkit-autofill:focus {
         width: 100vw;
         height: 50vh;
         position: fixed;
-        top: 5.5em;
+        top: 5em;
     }
 }
 .contact-links-container{
