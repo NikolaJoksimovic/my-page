@@ -468,13 +468,16 @@ input[type="submit"]{
     color: var(--clr-white);
     letter-spacing: 0.15em;
     font-weight: 700;
+    cursor: pointer;
 }
 input:-webkit-autofill {
+    box-shadow: 0 0 0 50px var(--clr-blue-pacific10) inset;
     -webkit-box-shadow: 0 0 0 50px var(--clr-blue-pacific10) inset;
     -webkit-text-fill-color: var(--clr-white);
 }
 
 input:-webkit-autofill:focus {
+    box-shadow: 0 0 0 50px var(--clr-blue-pacific10) inset;
     -webkit-box-shadow: 0 0 0 50px var(--clr-blue-pacific10) inset;
     -webkit-text-fill-color: var(--clr-white);
 }

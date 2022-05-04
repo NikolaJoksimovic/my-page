@@ -8,7 +8,8 @@ const navToggleBtnEl = document.querySelector(".navbar-toggle-btn"),
     projectsContainerEl = document.querySelector(".projects-container"),
     contactLinksContainerEl = document.querySelector(".contact-links-container"),
     contactLinksLeftEl = document.querySelector(".contact-left"),
-    contacLinksEl = document.querySelector(".contact-links");
+    contacLinksEl = document.querySelector(".contact-links"),
+    submitBtn = document.querySelector(".submit-btn");
     
     
     // NAVBAR DROP MENU
@@ -126,8 +127,7 @@ async function renderProjectList(){
                 <a href="${data[i].github}" class="item-link" target="_blank">
                     &ltcode&gt
                 </a>
-            </article>
-                                            `
+            </article>`
         }
     });
     
@@ -138,15 +138,15 @@ contactLinksLeftEl.addEventListener("click", ()=>{
     
     if(!contactLinksOpen){
         contactLinksOpen = true;
-        contactLinksLeftEl.innerHTML = `<i class="fa-solid fa-angle-right"></i>`
-
-        contacLinksEl.classList.add("contact-links-expand")
+        contactLinksLeftEl.innerHTML = `<i class="fa-solid fa-angle-right"></i>`;
+        contacLinksEl.classList.add("contact-links-expand");
     }else{
         contactLinksOpen = false;
-        contactLinksLeftEl.innerHTML = `<i class="fa-solid fa-angle-left"></i>`
-        contacLinksEl.classList.remove("contact-links-expand")
-        
+        contactLinksLeftEl.innerHTML = `<i class="fa-solid fa-angle-left"></i>`;
+        contacLinksEl.classList.remove("contact-links-expand");
     }
 });
-
+submitBtn.addEventListener("click", (e)=>{
+    e.preventDefault();
+})
 
