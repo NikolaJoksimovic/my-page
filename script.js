@@ -49,6 +49,9 @@ window.addEventListener("scroll", function(){
         contactLinksContainerEl.style.width = "auto";
     }else{
         contactLinksContainerEl.style.width = "0px";
+        contactLinksOpen = false;
+        contactLinksLeftEl.innerHTML = `<i class="fa-solid fa-angle-left"></i>`
+        contacLinksEl.classList.remove("contact-links-expand")
     }
 })
 
